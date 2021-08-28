@@ -43,6 +43,9 @@ status:
 	@curl -X GET "localhost:9200/_cat/indices?v&pretty"
 endif
 
+gqlcode:
+	docker-compose exec -w /general/spa general yarn codegen:gen
+
 # commands for container shell or host without docker command
 ifeq ($(HAS_DOCKER),false)
 status:

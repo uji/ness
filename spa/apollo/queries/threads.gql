@@ -1,0 +1,9 @@
+query threads($closed: Boolean, $size: Int, $from: Int, $word: String) {
+  threads(input: { closed: $closed, size: $size, from: $from, word: $word }) {
+    id
+    title
+    createdAt
+    updatedAt
+    closed
+  }
+}

@@ -1,0 +1,9 @@
+overwrite: true
+schema: ../api/graph/schema.graphqls
+documents: apollo/**/*.gql
+generates:
+  generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-vue-apollo

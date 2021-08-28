@@ -1,0 +1,53 @@
+{
+  "name": "ness-spa",
+  "scripts": {
+    "dev": "nuxt-ts --hostname '0.0.0.0' -p 8080",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
+    "lint:ts": "eslint --ext .ts,.vue --ignore-path .gitignore .",
+    "lint": "yarn lint:ts",
+    "fmt": "run-p fmt:*",
+    "fmt:eslint-prettier": "eslint --fix --ext .ts,.vue --ignore-path .gitignore .",
+    "fmt:stylelint": "stylelint './**/*.{css,vue}' --fix",
+    "story": "env DRY_MODE=1 nuxt-ts storybook --host '0.0.0.0' -p 9090",
+    "codegen:gen": "graphql-codegen --config codegen.yml && yarn fmt"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@vue/apollo-composable": "^4.0.0-alpha.12",
+    "@vue/composition-api": "^1.0.0-beta.22",
+    "apollo-boost": "^0.4.9",
+    "firebase": "^8.2.1",
+    "graphql-tag": "^2.11.0",
+    "nuxt": "^2.14.6"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.0",
+    "@graphql-codegen/typescript": "^1.19.0",
+    "@graphql-codegen/typescript-operations": "^1.17.13",
+    "@graphql-codegen/typescript-vue-apollo": "^2.3.1",
+    "@nuxt/types": "^2.14.6",
+    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-config-typescript": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/google-fonts": "^1.2.0",
+    "@nuxtjs/storybook": "^3.3.0",
+    "@nuxtjs/tailwindcss": "^3.4.2",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  }
+}

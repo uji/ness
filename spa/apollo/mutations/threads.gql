@@ -1,0 +1,26 @@
+mutation createThread($title: String!) {
+  createThread(input: { title: $title }) {
+    title
+    closed
+    updatedAt
+    id
+  }
+}
+
+mutation openThread($id: ID!) {
+  openThread(input: { threadID: $id }) {
+    title
+    closed
+    updatedAt
+    id
+  }
+}
+
+mutation closeThread($id: ID!) {
+  closeThread(input: { threadID: $id }) {
+    title
+    closed
+    updatedAt
+    id
+  }
+}
