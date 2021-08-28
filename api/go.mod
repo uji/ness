@@ -1,6 +1,6 @@
 module github.com/uji/ness/api
 
-go 1.16
+go 1.17
 
 require (
 	cloud.google.com/go v0.75.0 // indirect
@@ -30,4 +30,18 @@ require (
 	google.golang.org/grpc v1.35.0 // indirect
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776 // indirect
+)
+
+require (
+	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
+	github.com/golang/protobuf v1.4.3 // indirect
+	github.com/googleapis/gax-go/v2 v2.0.5 // indirect
+	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/jstemmer/go-junit-report v0.9.1 // indirect
+	go.opencensus.io v0.22.5 // indirect
+	golang.org/x/lint v0.0.0-20201208152925-83fdc39ff7b5 // indirect
+	golang.org/x/net v0.0.0-20201224014010-6772e930b67b // indirect
+	golang.org/x/text v0.3.4 // indirect
+	google.golang.org/appengine v1.6.7 // indirect
+	google.golang.org/protobuf v1.25.0 // indirect
 )
