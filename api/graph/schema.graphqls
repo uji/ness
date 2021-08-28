@@ -1,0 +1,54 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+scalar DateTime
+
+interface Node {
+  id: ID!
+}
+
+type User implements Node {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Thread implements Node {
+  id: ID!
+  title: String!
+  closed: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input GetThreadsInput {
+  closed: Boolean
+  size: Int
+  from: Int
+  word: String
+}
+
+type Query {
+  node(id: ID!): Node!
+  threads(input: GetThreadsInput!): [Thread!]!
+}
+
+input NewThread {
+  title: String!
+}
+
+input OpenThread {
+  threadID: ID!
+}
+
+input CloseThread {
+  threadID: ID!
+}
+
+type Mutation {
+  createThread(input: NewThread!): Thread!
+  openThread(input: OpenThread!): Thread!
+  closeThread(input: CloseThread!): Thread!
+}
