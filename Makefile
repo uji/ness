@@ -18,6 +18,7 @@ clean:
 	docker-compose down --rmi all --volumes --remove-orphans
 
 up:
+	source .env
 	docker-compose up -d
 	docker-compose exec general sh git.sh
 
