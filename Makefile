@@ -31,18 +31,10 @@ stop:
 	docker-compose stop
 
 serve:
-	docker-compose exec general go run ./api/testsrv
+	docker-compose exec -w /general/api general go run ./testsrv
 
 serve-with-auth:
-	docker-compose exec general go run ./api/testsrv -teamID $(TEAM_ID) -userID $(USER_ID)
-
-table:
-	docker-compose exec general go run ./api/tools/dbtool/ create
-	docker-compose exec general go run ./api/tools/elsch/ create
-
-destroy-table:
-	docker-compose exec general go run ./api/tools/dbtool/ destroy
-	docker-compose exec general go run ./api/tools/elsch/ delete
+	docker-compose exec -w /general/api general go run ./testsrv -teamID $(TEAM_ID) -userID $(USER_ID)
 
 status:
 	@echo "--elasticsearch--"
