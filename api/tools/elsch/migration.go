@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/uji/ness-api-function/infra/elsch"
+	"github.com/uji/ness/api/infra/elsch"
 )
 
 func usage() {

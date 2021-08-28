@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/reqctx"
 )
 
 type Logging struct{}

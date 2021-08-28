@@ -5,14 +5,14 @@ import (
 	"net/http"
 
 	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/uji/ness-api-function/domain/thread"
-	"github.com/uji/ness-api-function/domain/usr"
-	"github.com/uji/ness-api-function/graph"
-	"github.com/uji/ness-api-function/graph/generated"
-	"github.com/uji/ness-api-function/infra/elsch"
-	"github.com/uji/ness-api-function/infra/fbs"
-	"github.com/uji/ness-api-function/infra/gcp/dtstr"
-	"github.com/uji/ness-api-function/infra/middleware"
+	"github.com/uji/ness/api/domain/thread"
+	"github.com/uji/ness/api/domain/usr"
+	"github.com/uji/ness/api/graph"
+	"github.com/uji/ness/api/graph/generated"
+	"github.com/uji/ness/api/infra/elsch"
+	"github.com/uji/ness/api/infra/fbs"
+	"github.com/uji/ness/api/infra/gcp/dtstr"
+	"github.com/uji/ness/api/infra/middleware"
 )
 
 func NewRegisterdServer() http.Handler {

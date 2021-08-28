@@ -5,7 +5,7 @@ import (
 	"context"
 
 	"firebase.google.com/go/auth"
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/reqctx"
 )
 
 type FireBaseAuthClient interface {

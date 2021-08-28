@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/datastore"
-	"github.com/uji/ness-api-function/infra/gcp/dtstr"
+	"github.com/uji/ness/api/infra/gcp/dtstr"
 )
 
 type testStoreSut struct {

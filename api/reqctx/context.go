@@ -3,7 +3,7 @@ package reqctx
 import (
 	"context"
 
-	"github.com/uji/ness-api-function/nesserr"
+	"github.com/uji/ness/api/nesserr"
 )
 
 type contextKey int8

@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"firebase.google.com/go/auth"
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/reqctx"
 )
 
 type MiddleWare struct {

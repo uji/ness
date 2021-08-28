@@ -7,7 +7,7 @@ import (
 
 	"cloud.google.com/go/datastore"
 	"github.com/google/go-cmp/cmp"
-	"github.com/uji/ness-api-function/infra/gcp/dtstr"
+	"github.com/uji/ness/api/infra/gcp/dtstr"
 )
 
 func TestRepository_create(t *testing.T) {

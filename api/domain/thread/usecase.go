@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/guregu/null"
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/reqctx"
 )
 
 type (

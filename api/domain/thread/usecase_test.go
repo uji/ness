@@ -8,7 +8,7 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/google/go-cmp/cmp"
 	"github.com/guregu/null"
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/reqctx"
 )
 
 func TestUsecaseGet(t *testing.T) {

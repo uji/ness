@@ -12,8 +12,8 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/uuid"
-	"github.com/uji/ness-api-function/domain/thread"
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/domain/thread"
+	"github.com/uji/ness/api/reqctx"
 )
 
 func TestPutThread(t *testing.T) {

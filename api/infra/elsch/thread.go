@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/elastic/go-elasticsearch/v7/esapi"
-	"github.com/uji/ness-api-function/domain/thread"
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/domain/thread"
+	"github.com/uji/ness/api/reqctx"
 )
 
 var (

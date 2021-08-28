@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/uji/ness-api-function/nesserr"
-	"github.com/uji/ness-api-function/reqctx"
+	"github.com/uji/ness/api/nesserr"
+	"github.com/uji/ness/api/reqctx"
 )
 
 func TestGetAuthenticationInfo(t *testing.T) {

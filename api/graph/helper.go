@@ -3,8 +3,8 @@ package graph
 import (
 	"time"
 
-	"github.com/uji/ness-api-function/domain/thread"
-	"github.com/uji/ness-api-function/graph/model"
+	"github.com/uji/ness/api/domain/thread"
+	"github.com/uji/ness/api/graph/model"
 )
 
 func cnvThread(thread thread.Thread) *model.Thread {

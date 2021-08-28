@@ -1,8 +1,8 @@
 package graph
 
 import (
-	"github.com/uji/ness-api-function/domain/thread"
-	"github.com/uji/ness-api-function/domain/usr"
+	"github.com/uji/ness/api/domain/thread"
+	"github.com/uji/ness/api/domain/usr"
 )
 
 // This file will not be regenerated automatically.
