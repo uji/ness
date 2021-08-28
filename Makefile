@@ -47,6 +47,9 @@ endif
 gqlcode:
 	docker-compose exec -w /general/spa general yarn codegen:gen
 
+terraform:
+	docker-compose exec terraform ash
+
 # commands for container shell or host without docker command
 ifeq ($(HAS_DOCKER),false)
 status:
