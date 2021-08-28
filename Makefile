@@ -15,8 +15,7 @@ init:
 	docker-compose build --no-cache
 
 clean:
-	docker-compose down
-	docker volume rm ness_general
+	docker-compose down --rmi all --volumes --remove-orphans
 
 up:
 	docker-compose up -d
@@ -27,7 +26,6 @@ down:
 
 start:
 	docker-compose start
-	docker-compose exec general sh git.sh
 
 stop:
 	docker-compose stop
