@@ -1,24 +1,39 @@
 package main
 
 import (
-	"context"
+	"flag"
+	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/aws/aws-lambda-go/events"
-	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/awslabs/aws-lambda-go-api-proxy/gorillamux"
-	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 	"github.com/uji/ness-api-function/registory"
 )
 
-var muxAdpt *gorillamux.GorillaMuxAdapter
+const defaultPort = "3000"
 
-func init() {
-	r := mux.NewRouter()
-	srv := registory.NewRegisterdServer()
+func usage() {
+	fmt.Fprintf(os.Stderr, "%s is runner of graphql server for debug\n", os.Args[0])
+	fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
+	fmt.Fprintf(os.Stderr, "\t%s [flag] # run graphql server\n", os.Args[0])
+	flag.PrintDefaults()
+}
+
+var (
+	TeamID = flag.String("teamID", "", "dammy value of authentication TeamID")
+	UserID = flag.String("userID", "", "dammy value of authentication UserID")
+)
+
+func main() {
+	flag.Usage = usage
+	flag.Parse()
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = defaultPort
+	}
 
 	opt := cors.Options{
 		AllowedOrigins: []string{"http://localhost:8080"},
@@ -35,17 +50,18 @@ func init() {
 	}
 	c := cors.New(opt)
 
-	r.Handle("/", c.Handler(playground.Handler("GraphQL playground", "/query")))
-	r.Handle("/query", c.Handler(srv))
+	http.Handle("/", c.Handler(playground.Handler("GraphQL playground", "/query")))
 
-	muxAdpt = gorillamux.New(r)
-}
+	var srv http.Handler
+	if UserID != nil && *UserID != "" &&
+		TeamID != nil && *TeamID != "" {
+		srv = registory.NewRegisterdServerWithDammyAuth(*TeamID, *UserID)
+		log.Printf("use dammy authentication middleware TeamID=%s UserID=%s", *TeamID, *UserID)
+	} else {
+		srv = registory.NewRegisterdServer()
+	}
+	http.Handle("/query", c.Handler(srv))
 
-func handle(ctx context.Context, req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	log.Printf(`{requestHeader: %s, requestMultiValueHeaders: %s}`, req.Headers, req.MultiValueHeaders)
-	return muxAdpt.Proxy(req)
-}
-
-func main() {
-	lambda.Start(handle)
+	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

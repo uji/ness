@@ -32,10 +32,10 @@ stop:
 	docker-compose stop
 
 serve:
-	docker-compose exec -w /general/api general go run ./testsrv
+	docker-compose exec -w /general/api general go run .
 
 serve-with-auth:
-	docker-compose exec -w /general/api general go run ./testsrv -teamID $(TEAM_ID) -userID $(USER_ID)
+	docker-compose exec -w /general/api general go run . -teamID $(TEAM_ID) -userID $(USER_ID)
 
 status:
 	@echo "--elasticsearch--"
